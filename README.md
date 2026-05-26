@@ -166,7 +166,51 @@ Além dos CRUDs automáticos de `JpaRepository` para Aluno, Professor e Discipli
 | `POST` | `/matriculas` | Matricular aluno na disciplina | 201 |
 | `POST` | `/matriculas/trancar/{id}` | Trancar matrícula | 204 |
 
-## 8. Exemplos de payload JSON
+## 8. Prints de testes — Banco de Dados (DBeaver)
+
+### Tabela `alunos`
+![DBeaver - Tabela Alunos](print-dbeaver-2.png)
+
+### Tabela `professores`
+![DBeaver - Tabela Professores](print-dbeaver-1.png)
+
+## 9. Prints de testes — Insomnia
+
+### CRUD de Alunos
+
+**Criar Aluno** (`POST /alunos`) — Status `201 Created`
+![Insomnia - Criar Aluno](print-insomnia-aluno-criar.png)
+
+**Listar Alunos** (`GET /alunos`) — Status `200 OK`
+![Insomnia - Listar Alunos](print-insomnia-aluno-listar.png)
+
+**Buscar Aluno por ID** (`GET /alunos/{id}`) — Status `200 OK`
+![Insomnia - Buscar Aluno](print-insomnia-aluno-buscar.png)
+
+**Atualizar Aluno** (`PUT /alunos/{id}`) — Status `200 OK`
+![Insomnia - Atualizar Aluno](print-insomnia-aluno-atualizar.png)
+
+**Excluir Aluno** (`DELETE /alunos/{id}`) — Status `204 No Content`
+![Insomnia - Excluir Aluno](print-insomnia-aluno-excluir.png)
+
+### CRUD de Professores
+
+**Criar Professor** (`POST /professores`) — Status `201 Created`
+![Insomnia - Criar Professor](print-insomnia-professor-criar.png)
+
+**Listar Professores** (`GET /professores`) — Status `200 OK`
+![Insomnia - Listar Professores](print-insomnia-professor-listar.png)
+
+**Buscar Professor por ID** (`GET /professores/{id}`) — Status `200 OK`
+![Insomnia - Buscar Professor](print-insomnia-professor-buscar.png)
+
+**Atualizar Professor** (`PUT /professores/{id}`) — Status `200 OK`
+![Insomnia - Atualizar Professor](print-insomnia-professor-atualizar.png)
+
+**Excluir Professor** (`DELETE /professores/{id}`) — Status `204 No Content`
+![Insomnia - Excluir Professor](print-insomnia-professor-excluir.png)
+
+## 10. Exemplos de payload JSON
 
 **Cadastrar Aluno** (`POST /alunos`)
 ```json
@@ -231,7 +275,7 @@ Além dos CRUDs automáticos de `JpaRepository` para Aluno, Professor e Discipli
 }
 ```
 
-## 9. Características arquiteturais observadas
+## 11. Características arquiteturais observadas
 
 ### Pontos positivos
 
@@ -248,7 +292,7 @@ Além dos CRUDs automáticos de `JpaRepository` para Aluno, Professor e Discipli
 - Paginação (`Pageable`) nos endpoints de listagem GET;
 - Adicionar endpoints de atualização de notas e emissão de histórico no controller de matrículas.
 
-## 10. Exemplo de arquitetura conceitual
+## 12. Exemplo de arquitetura conceitual
 
 ```
 ┌─────────────────────────┐
@@ -281,7 +325,7 @@ Além dos CRUDs automáticos de `JpaRepository` para Aluno, Professor e Discipli
 └─────────────────────────┘
 ```
 
-## 11. Arquivos analisados para esta documentação
+## 13. Arquivos analisados para esta documentação
 
 - `ApiApplication.java`
 - **Pacote controller:** AlunoController, ProfessorController, DisciplinaController, MatriculaAlunoController
