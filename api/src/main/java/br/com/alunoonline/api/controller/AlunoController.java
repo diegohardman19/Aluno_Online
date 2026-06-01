@@ -16,33 +16,33 @@ public class AlunoController {
     @Autowired
     AlunoService alunoService;
 
-    @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public void criarAluno(@RequestBody Aluno aluno){
-        alunoService.criarAluno(aluno);
-    }
-
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public List<Aluno> listarTodosAlunos(){
-        return alunoService.listarTodosAlunos();
+    public List<Aluno> getAllAlunos(){
+        return alunoService.getAllAlunos();
     }
 
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Optional<Aluno> buscarAlunoPorId(@PathVariable long id){
-        return alunoService.buscarAlunoPorId(id);
+    public Optional<Aluno> getAlunoById(@PathVariable Long id){
+        return alunoService.getAlunoById(id);
+    }
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public void newAluno(@RequestBody Aluno aluno){
+        alunoService.newAluno(aluno);
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deletarAlunoPorId(@PathVariable long id){
-        alunoService.deletarAlunoPorId(id);
+    public void remAlunoById(@PathVariable Long id){
+        alunoService.remAlunoById(id);
     }
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void atualizarAlunoPorId(@PathVariable long id,@RequestBody Aluno alunoAtualizado){
-        alunoService.atualizarAlunoPorId(id, alunoAtualizado);
+    public void altAlunoById(@PathVariable Long id, @RequestBody Aluno aluno){
+        alunoService.altAlunoById(id, aluno);
     }
 }
