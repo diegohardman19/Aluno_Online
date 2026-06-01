@@ -24,6 +24,12 @@ public class DisciplinaController {
     @ResponseStatus(HttpStatus.OK)
     public List<Disciplina> listarDisciplinasDoProf(
             @PathVariable Long professorId) {
-        return disciplinaService.listarDisciplinarDoProf(professorId);
+        return disciplinaService.listarDisciplinasDoProf(professorId);
+    }
+
+    @GetMapping()
+    @ResponseStatus(HttpStatus.OK)
+    public List<Disciplina> listarTodasDisciplinas() {
+        return disciplinaService.listarTodasDisciplinas();
     }
 }
