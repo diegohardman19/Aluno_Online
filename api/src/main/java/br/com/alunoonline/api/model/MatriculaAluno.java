@@ -1,16 +1,14 @@
 package br.com.alunoonline.api.model;
 
-import br.com.alunoonline.api.MatriculaAlunoStatusEnum;
+import br.com.alunoonline.api.enums.MatriculaAlunoStatusEnum;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Data
-@Entity
 @Table(name = "matricula_aluno")
+@Entity
 public class MatriculaAluno {
 
     @Id
@@ -26,7 +24,6 @@ public class MatriculaAluno {
     private Disciplina disciplina;
 
     private Double nota1;
-
     private Double nota2;
 
     @Enumerated(EnumType.STRING)
