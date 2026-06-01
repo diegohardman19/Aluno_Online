@@ -7,7 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/matricluas")
+@RequestMapping("/matriculas")
 public class MatriculaAlunoController {
 
     @Autowired
@@ -15,13 +15,7 @@ public class MatriculaAlunoController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void criarMatricula(@RequestBody MatriculaAluno matriculaAluno){
-        matriculaAlunoService.criarMatricula(matriculaAluno);
-    }
-
-    @PostMapping("/trancar/{id}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void trancarMatricula(@PathVariable long id){
-        matriculaAlunoService.trancarMatricula(id);
+    public void criarMatricula(@RequestBody MatriculaAluno m) {
+        matriculaAlunoService.criarMatricula(m);
     }
 }
