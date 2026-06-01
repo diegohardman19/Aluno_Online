@@ -9,30 +9,30 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-
 public class ProfessorService {
 
     @Autowired
     ProfessorRepository professorRepository;
 
-    public void criarProfessor(Professor professor) {
-        professorRepository.save(professor);
-    }
-
-    public List<Professor> listarTodosProfessores(){
+    public List<Professor> getAllProfessores(){
         return professorRepository.findAll();
     }
 
-    public Optional<Professor> buscarProfessorPorId(long id){
+    public Optional<Professor> getProfessorById(Long id){
         return professorRepository.findById(id);
     }
 
-    public void deletarProfessorPorId(long id){
+    public void newProfessor(Professor professor){
+        professorRepository.save(professor);
+    }
+
+    public void remProfessorById(Long id){
         professorRepository.deleteById(id);
     }
 
-    public void atualizarProfessorPorId(long id, Professor professorAtualizado){
-        professorAtualizado.setId(id);
-        professorRepository.save(professorAtualizado);
+    public void altProfessorById(Long id, Professor professor){
+        professor.setId(id);
+        professorRepository.save(professor);
     }
+
 }
