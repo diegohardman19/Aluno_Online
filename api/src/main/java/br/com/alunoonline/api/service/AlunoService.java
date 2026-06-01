@@ -14,24 +14,25 @@ public class AlunoService {
     @Autowired
     AlunoRepository alunoRepository;
 
-    public void criarAluno(Aluno aluno){
-        alunoRepository.save(aluno);
-    }
-
-    public List<Aluno>listarTodosAlunos(){
+    public List<Aluno> getAllAlunos(){
         return alunoRepository.findAll();
     }
 
-    public Optional<Aluno> buscarAlunoPorId(long id){
+    public Optional<Aluno> getAlunoById(Long id){
         return alunoRepository.findById(id);
     }
 
-    public void deletarAlunoPorId(long id){
+    public void newAluno(Aluno aluno){
+        alunoRepository.save(aluno);
+    }
+
+    public void remAlunoById(Long id){
         alunoRepository.deleteById(id);
     }
 
-    public void atualizarAlunoPorId(long id, Aluno alunoEditado){
-        alunoEditado.setId(id);
-        alunoRepository.save(alunoEditado);
+    public void altAlunoById(Long id, Aluno aluno){
+        aluno.setId(id);
+        alunoRepository.save(aluno);
     }
+
 }
