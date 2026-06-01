@@ -3,7 +3,7 @@ package br.com.alunoonline.api.dtos;
 import lombok.Data;
 
 @Data
-public class DisciplinasAlunoDto {
+public class DisciplinasAlunoDTO {
     private String nomeDisciplina;
     private String professorDisciplina;
     private Double nota1;
