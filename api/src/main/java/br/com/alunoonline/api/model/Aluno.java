@@ -5,17 +5,20 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Data
-@Table(name = "aluno")
+@Table(name="aluno")
 @Entity
 public class Aluno {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nomeCompleto;
-    private String cpf;
+    private String nome;
+    private String tipoDocumento;
+    private String numeroDocumento;
     private String email;
+    private String telefone;
+
 }
